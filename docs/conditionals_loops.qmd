@@ -1,0 +1,65 @@
+---
+title: "Conditionals and Loops"
+format: html
+---
+## Conditional statements and for loops 
+
+Task 1
+```{r}
+# if-else if-else statement
+pm2_5 <- 200
+
+if (pm2_5 < 100){
+  print("Low to moderate risk")
+} else if (100 <= pm2_5 & pm2_5 < 150){
+  print("Unhealthy for sensitive groups")
+} else 
+  print("Health risk present")
+```
+
+Task 2
+```{r}
+# detecting patterns in a string 
+species <- "blue whale"
+
+if (stringr::str_detect(species, pattern = "blue whale")){
+  print("You found a whale!")
+}
+```
+
+Task 3
+```{r}
+# if-else if-else if with strings
+base_burrito <- 6.50
+main_ingredient <- "steak"
+
+if (stringr::str_detect(main_ingredient, pattern = "veggie")){
+  burrito_cost <- base_burrito
+} else if (stringr::str_detect(main_ingredient, pattern = "chicken")){
+  burrito_cost <- base_burrito + 3
+} else if (stringr::str_detect(main_ingredient, pattern = "steak")){
+  burrito_cost <- base_burrito + 3.25
+}
+print(burrito_cost)
+```
+
+Task 4
+```{r}
+# for loop
+fish <- c(8, 10, 12, 23)
+fish_proportions <- vector(mode = "numeric", length = length(fish))
+
+for (i in 1:length(fish)){
+  fish_proportions[i] <- fish[i]/(sum(fish))
+}
+fish_proportions
+```
+
+Task 5
+```{r}
+# month for loop
+for (i in 1:length(month.name)){
+  print(paste(month.name[i], "is month", i))
+}
+  
+```
